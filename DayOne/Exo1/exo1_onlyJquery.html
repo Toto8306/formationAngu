@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.min.css">
+		<script src="https://code.jquery.com/jquery-1.12.0.js"></script>
+	</head>
+
+	<body>
+		<div>
+			<h1>ngModel</h1>
+			Name: <input type="text"  placeholder="enter your magical text here" class="nameNgModelInput"></input>
+			<div>
+				Hello &nbsp;
+				<div class="nameNgModel" style="display:inline-block;"/>
+			</div>
+		</div>
+
+		<div>
+			<h1>ngClick</h1>	
+			<input type="button" class="showSuccess btn btn-success"  value="Success"/>		
+			<input type="button" class="showDanger btn btn-danger" value="Danger"/>		
+			<input type="button" class="erase btn" value="Default"/>		
+			<div class="textsuccess">You clicked with success on button gratz !</div>
+			<div class="textdanger">You clicked on a dangerous link beware !</div>
+		</div>	
+
+		<script type="text/javascript">
+			var delay = 900;
+			function hideAll()
+			{
+		    	$(".textsuccess").hide(delay);
+				$(".textdanger").hide(delay);
+			}
+
+			$( document ).ready(function() {
+				hideAll();
+				$(document).on('input', ".nameNgModelInput", function() {
+					$(".nameNgModel").html($(this).val());
+				});
+				$(document).on('click', ".showSuccess", function() {
+					$(".textsuccess").show(delay);
+					$(".textdanger").hide(delay);
+				});
+				$(document).on('click', ".showDanger", function() {
+					$(".textdanger").show(delay);
+					$(".textsuccess").hide(delay);
+				});
+				$(document).on('click', ".erase", function() {
+					hideAll();
+				});		
+			});
+		</script>			
+	</body>
+</html>

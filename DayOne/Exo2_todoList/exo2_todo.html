@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<title>TODO list</title>
+		<link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.min.css">
+		<link rel="stylesheet" href="app\css\todo.css">
+	</head>
+
+	<body class="container" ng-app="todoApp">
+
+
+		<div class="row-fluid">
+
+		      <div class="jumbotron col-xs-8 col-xs-offset-2">
+
+		        <h2>Todo</h2>
+
+		        <div class="container-fluid" ng-controller="TodoListController">
+
+		            <span>{{ remaining()}} of {{ todos.length }} remaining</span> [<a ng-click="archive()">archive</a>]
+
+		            <ul class="list-group" >
+
+		                <li class="list-group-item" ng-repeat="todo in todos">
+
+		                    <input type="checkbox" ng-model="todo.done">
+
+		                    <span class="done-{{todo.done}}">{{ todo.text }}</span>
+
+		                </li>
+		            </ul>
+
+		            <form>
+
+		                <input type="text" placeholder="Add new todo here" ng-model="formNewTodo">
+
+		                <button class="btn btn-primary" ng-click="addTodo()" >Add</button>
+
+		            </form>
+
+
+		        </div>
+
+		      </div
+
+
+		<div class="jumbotron">
+		</div>
+
+		<div style="display:none;">
+			<div class="jumbotron" >
+				<h1>ngModel</h1>
+				Name: <input type="text" class="" ng-model="yourName"></input>
+				<div>
+					Hello &nbsp;{{yourName}} !
+				</div>
+			</div>
+
+			<div class="jumbotron">
+				<h1>ngClick</h1>	
+				<input type="button" ng-click="tab=1" class="showSuccess btn btn-success"  value="Success"/>		
+				<input type="button" ng-click="tab=2" class="showDanger btn btn-danger" value="Danger"/>		
+				<input type="button" ng-click="tab=0" class="erase btn" value="Default"/>		
+				<div ng-show="tab===1" class="textsuccess">You clicked with success on button gratz !</div>
+				<div ng-show="tab===2" class="textdanger">You clicked on a dangerous link beware !</div>
+				<div ng-show="tab===0" class="textdanger"></div>
+			</div>	
+		</div>
+
+
+	<script src="bower_components\angular\angular.min.js"></script>
+	<script src="app\js\todo.js"></script>
+	
+	</body>
+</html>

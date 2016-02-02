@@ -1,0 +1,15 @@
+{
+  "name": "My app",
+  "description": "",
+  "keywords": [],
+  "homepage": "",
+  "license": "MIT3",
+  "main": [
+    "index.html"
+  ],
+  "dependencies": {
+    "angular": "^1.4.9",
+    "bootstrap": "^3.3.6",
+    "angular-route": "^1.4.9"
+  }
+}

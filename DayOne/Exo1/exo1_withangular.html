@@ -1,0 +1,27 @@
+<html >
+	<head>
+		<link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.min.css">
+	</head>
+
+
+	<body class="container" ng-app>
+		<div class="jumbotron">
+			<h1>ngModel</h1>
+			Name: <input type="text" class="" ng-model="yourName"></input>
+			<div>
+				Hello &nbsp;{{yourName}} !
+			</div>
+		</div>
+
+		<div class="jumbotron">
+			<h1>ngClick</h1>	
+			<input type="button" ng-click="tab=1" class="showSuccess btn btn-success"  value="Success"/>		
+			<input type="button" ng-click="tab=2" class="showDanger btn btn-danger" value="Danger"/>		
+			<input type="button" ng-click="tab=0" class="erase btn" value="Default"/>		
+			<div ng-show="tab===1" class="textsuccess">You clicked with success on button gratz !</div>
+			<div ng-show="tab===2" class="textdanger">You clicked on a dangerous link beware !</div>
+			<div ng-show="tab===0" class="textdanger"></div>
+		</div>	
+	<script src="bower_components\angular\angular.min.js"></script>
+	</body>
+</html>
